@@ -1,0 +1,34 @@
+const cardArray = [
+    {
+        name: 'fries',
+        image:
+    },
+    {
+        name:
+        image:
+    },
+    {
+        name:
+        image:
+    },
+    {
+        name:
+        image:
+    },
+    {
+        name:
+        image:
+    },
+    {
+        name:
+        image:
+    },
+    {
+        name:
+        image:
+    },
+    {
+        name:
+        image:
+    }
+];
