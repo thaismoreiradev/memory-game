@@ -1,6 +1,7 @@
 import { cardArray } from "./cardArray.js";
 const gridDisplay = document.querySelector("#grid");
 const resultDisplay = document.querySelector("#result");
+const message = document.querySelector("#message")
 let cards
 let cardsChosenNames = [];
 let cardsChosenIds = [];
@@ -31,12 +32,12 @@ const checkMatch = () => {
     if (optionOneId == optionTwoId){
         cards[optionOneId].setAttribute('src', 'images/image-blank.jpg')
         cards[optionTwoId].setAttribute('src', 'images/image-blank.jpg')
-        alert('You have chosen the same image!')
+        message.textContent = 'You have chosen the same image!'
     }
     
     // when user finds equal cards
     else if (cardsChosenNames[0] == cardsChosenNames[1]) {
-        alert("congrats")
+        message.textContent = "congrats"
         cards[optionOneId].removeEventListener('click', flipCard)
         cards[optionTwoId].removeEventListener('click', flipCard)
         cards[optionOneId].classList.add('dontFlip')
@@ -49,7 +50,7 @@ const checkMatch = () => {
     else {
         cards[optionOneId].setAttribute('src', 'images/image-blank.jpg')
         cards[optionTwoId].setAttribute('src', 'images/image-blank.jpg')
-        alert("not this time")
+        message.textContent = "not this time"
     }
 
     resultDisplay.textContent = cardsWon.length / 2
@@ -65,7 +66,7 @@ const checkMatch = () => {
 
     // when user finishes the game
     if(cardsWon.length == cardArray.length){
-        resultDisplay.textContent = "Congratulations, you found all pairs! :)"
+        message.textContent = "Congratulations, you found all pairs! :)"
     }
 }
 

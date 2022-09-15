@@ -2,12 +2,15 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(53, 53, 53);
 }
 
 .game-container{
     width: 80vw;
     max-width: 500px;
     min-width: 300px;
+    max-height: 90vh;
     padding: 1rem;
     /* margin: 10rem; */
     background-color:coral;
@@ -15,6 +18,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 0.9rem;
 }
 
 header{
@@ -22,23 +26,47 @@ header{
     background-color: aqua;
 }
 
-header h1 {
-    text-align: center;
+/* header .game-name{
+    display: flex;
+    justify-content: center;
+    background-color: darkgoldenrod;
+    margin-top: 0;
+    padding: 0;
+    
+} */
+
+header .game-name h1 {
+    display: flex;
+    justify-content: center;    
+    font-family: 'Bungee';    
+    font-size: 3.5rem;    
+    background-color: blueviolet;
+    margin: 0;
 }
 
 header .score{
-    background-color: blue;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    gap: 0.4rem;
+    background-color: blue;
+    font-size: 1.2rem;
 }
 
 header .score .score-info{
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
     background-color: brown;
+    border-radius: 0.3rem;
 }
 
 header .score .message{
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
     background-color: chartreuse;
+    border-radius: 0.3rem;
 }
 
 
@@ -56,11 +84,23 @@ main .grid {
 
 main .grid img{
     width: 100%;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    
 }
+
+main .grid img:hover{
+    background-color: rgba(255, 255, 255, .5);
+}
+
 
 footer{
     width: 100%;
     background-color: crimson;
-    text-align: center;
-    
+    text-align: center;    
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(0, 0, 0, 0.5);
 }

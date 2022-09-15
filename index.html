@@ -5,21 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
     <title>Memory Game</title>
 </head>
 <body>
     <div class="game-container">
         <header>
-            <h1>MEMORY GAME</h1>
+            <div class="game-name">
+                <h1>MEMORY GAME</h1>
+            </div>
             <div class="score">
                 <p class="score-info">Score: <span id="result">0</span></p>
-                <p class="message">string</p>
+                <p class="message" id="message">string</p>
             </div>
         </header>
         <main>        
             <div id="grid" class="grid"></div>
         </main>
-        <footer>jijijijijij</footer>        
+        <footer>
+            <p>Developed by <a href="https://github.com/thaismoreiradev" target="_blank" rel="noopener noreferrer">Thais Moreira</a> </p>
+        </footer>        
     </div>
     <script type="module" src="./app.js"></script>
 </body>
