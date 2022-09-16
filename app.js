@@ -12,11 +12,14 @@ cardArray.sort(() => 0.5 - Math.random());
 
 const createBoard = () => {
     for(let i = 0; i < cardArray.length; i++){
+        const div = document.createElement('div')
+        div.setAttribute('class', 'img-container')
         const card = document.createElement('img')
         card.setAttribute('src', 'images/image-blank.jpg')
         card.setAttribute('data-id', i)
         card.addEventListener("click", flipCard)
-        gridDisplay.appendChild(card)
+        gridDisplay.appendChild(div)
+        div.appendChild(card)
     } 
 };
 
@@ -32,12 +35,12 @@ const checkMatch = () => {
     if (optionOneId == optionTwoId){
         cards[optionOneId].setAttribute('src', 'images/image-blank.jpg')
         cards[optionTwoId].setAttribute('src', 'images/image-blank.jpg')
-        message.textContent = 'You have chosen the same image!'
+        message.textContent = 'You have chosen the same image'
     }
     
     // when user finds equal cards
     else if (cardsChosenNames[0] == cardsChosenNames[1]) {
-        message.textContent = "congrats"
+        message.textContent = "That's a match!"
         cards[optionOneId].removeEventListener('click', flipCard)
         cards[optionTwoId].removeEventListener('click', flipCard)
         cards[optionOneId].classList.add('dontFlip')
@@ -50,7 +53,7 @@ const checkMatch = () => {
     else {
         cards[optionOneId].setAttribute('src', 'images/image-blank.jpg')
         cards[optionTwoId].setAttribute('src', 'images/image-blank.jpg')
-        message.textContent = "not this time"
+        message.textContent = "not this time ..."
     }
 
     resultDisplay.textContent = cardsWon.length / 2
@@ -66,7 +69,7 @@ const checkMatch = () => {
 
     // when user finishes the game
     if(cardsWon.length == cardArray.length){
-        message.textContent = "Congratulations, you found all pairs! :)"
+        message.textContent = "You found all pairs! :)"
     }
 }
 

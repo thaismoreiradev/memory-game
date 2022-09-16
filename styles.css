@@ -1,93 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     display: flex;
     align-items: center;
     justify-content: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: rgb(53, 53, 53);
+    /* overflow: hidden; */
 }
 
+/* mobile first from 320px*/
+
 .game-container{
-    width: 80vw;
+    width: 100vw;
     max-width: 500px;
     min-width: 300px;
-    max-height: 90vh;
+    height: 100vh;
+    min-height: 538px;
+    max-height: 827px;
     padding: 1rem;
-    /* margin: 10rem; */
     background-color:coral;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 0.9rem;
+    /* border-radius: 0.9rem; */
 }
 
-header{
-    width: 100%;
-    background-color: aqua;
-}
-
-/* header .game-name{
-    display: flex;
-    justify-content: center;
-    background-color: darkgoldenrod;
-    margin-top: 0;
-    padding: 0;
-    
+/* @media (min-width: 425px) {
+    .game-container{
+        padding: 1rem 2.3rem;
+    }
 } */
 
-header .game-name h1 {
+
+
+header{
     display: flex;
-    justify-content: center;    
-    font-family: 'Bungee';    
-    font-size: 3.5rem;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: aqua;
+    margin-bottom: 0.3rem;
+    flex-basis: 35%;
+}
+
+/* @media (min-width: 375px) {
+    header {
+        min-height: 25%;
+        background-color: brown;
+    }
+} */
+
+header .game-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.8rem;    
     background-color: blueviolet;
-    margin: 0;
+    width: 100%;
+    flex-basis: 70%;    
 }
 
 header .score{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     gap: 0.4rem;
     background-color: blue;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    /* min-height: 30%; */
+    width: 100%;
+    flex-basis: 30%;
+
+}
+
+
+
+
+.div-score-info, .div-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: indianred;
+    width: 100%;
+    min-height: 3rem;
+    border-radius: 0.3rem;  
+    /* padding: 0.4rem; */
+    
+}
+
+
+.score-info, .message{
+    text-align: center;
+    
 }
 
 header .score .score-info{
-    width: 100%;
-    text-align: center;
-    padding: 0.5rem 0;
-    background-color: brown;
-    border-radius: 0.3rem;
+   font-size: 0.7rem;
+   font-weight: bold;
 }
 
-header .score .message{
-    width: 100%;
-    text-align: center;
-    padding: 0.5rem 0;
-    background-color: chartreuse;
-    border-radius: 0.3rem;
-}
+
 
 
 main{
+    display: flex;
+    justify-content: center;
     background-color:blueviolet;
     width: 100%;
+    /* min-height: 55%; */
+    flex-basis: 60%;
 }
+
+
 
 main .grid {
     display: grid;
+    align-items: center;
+    justify-content: center;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0.2rem;
+    background-color: darkgreen;
+    gap: 0.3rem;    
+    width: 100%;
 }
 
-main .grid img{
-    width: 100%;
+main .grid .img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 0.3rem;
-    cursor: pointer;
-    
+    background-color: red;
+    /* width: 100%; */
 }
+
+main .grid .img-container img{
+    display: block;
+    /* margin: auto; */
+    width: 100%;    
+    cursor: pointer;
+    object-fit: cover;
+}
+
+
+@media (min-width: 385px) {
+    main .grid {
+        width: 90%;
+        gap: 0.5rem;
+    }
+}
+@media (min-width: 445px) {
+    main .grid {
+        width: 80%;
+        gap: 0.5rem;
+    }
+}
+
 
 main .grid img:hover{
     background-color: rgba(255, 255, 255, .5);
@@ -95,12 +170,26 @@ main .grid img:hover{
 
 
 footer{
-    width: 100%;
+    display: flex;
+    width: 100%;    
     background-color: crimson;
-    text-align: center;    
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    /* min-height: 10%; */
+    flex-basis: 5%;
+    
 }
 
 footer a {
     text-decoration: none;
     color: rgb(0, 0, 0, 0.5);
+    
 }
+
+/* @media (min-width: 375px) {
+    footer {
+        min-height: 5%;
+        background-color: brown;
+    }
+} */
