@@ -10,7 +10,6 @@ body{
     justify-content: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: rgb(53, 53, 53);
-    /* overflow: hidden; */
 }
 
 /* mobile first from 320px*/
@@ -23,20 +22,21 @@ body{
     min-height: 538px;
     max-height: 827px;
     padding: 1rem;
-    background-color:coral;
+    background-color:antiquewhite;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* border-radius: 0.9rem; */
 }
 
-/* @media (min-width: 425px) {
-    .game-container{
-        padding: 1rem 2.3rem;
-    }
-} */
 
+@media (min-width: 768px) {
+    .game-container{
+        margin: 0.4rem 0;
+        height: 98vh;     
+        border-radius: 0.5rem;
+    }
+}
 
 
 header{
@@ -45,40 +45,57 @@ header{
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: aqua;
     margin-bottom: 0.3rem;
     flex-basis: 35%;
 }
-
-/* @media (min-width: 375px) {
-    header {
-        min-height: 25%;
-        background-color: brown;
-    }
-} */
 
 header .game-name {
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Bebas Neue', cursive;
+    color: rgb(34, 33, 33);
     font-size: 1.8rem;    
-    background-color: blueviolet;
     width: 100%;
     flex-basis: 70%;    
 }
+
+h1:hover{
+    color: rgb(49, 49, 49);
+}
+
+@media (max-width: 400px) {
+    .game-name h1 .break-line{
+        display: block;
+        line-height: 1.5rem;
+        text-align: center;
+        
+    }
+}
+
+@media (min-width: 500px) {
+    .game-name h1 {
+        font-size: 5rem;
+    }
+}
+
 
 header .score{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    background-color: blue;
     font-size: 0.9rem;
-    /* min-height: 30%; */
     width: 100%;
     flex-basis: 30%;
+}
 
+.div-message{
+    background-color: pink;
+}
+
+.div-score-info{
+    background-color: yellow;
 }
 
 
@@ -88,18 +105,14 @@ header .score{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: indianred;
     width: 100%;
     min-height: 3rem;
-    border-radius: 0.3rem;  
-    /* padding: 0.4rem; */
-    
+    border-radius: 0.3rem;    
 }
 
 
 .score-info, .message{
     text-align: center;
-    
 }
 
 header .score .score-info{
@@ -107,18 +120,13 @@ header .score .score-info{
    font-weight: bold;
 }
 
-
-
-
 main{
     display: flex;
     justify-content: center;
-    background-color:blueviolet;
     width: 100%;
     /* min-height: 55%; */
     flex-basis: 60%;
 }
-
 
 
 main .grid {
@@ -127,7 +135,6 @@ main .grid {
     justify-content: center;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: darkgreen;
     gap: 0.3rem;    
     width: 100%;
 }
@@ -138,15 +145,14 @@ main .grid .img-container{
     justify-content: center;
     border-radius: 0.3rem;
     background-color: red;
-    /* width: 100%; */
 }
 
 main .grid .img-container img{
     display: block;
-    /* margin: auto; */
     width: 100%;    
     cursor: pointer;
     object-fit: cover;
+    border-radius: 0.3rem;
 }
 
 
@@ -171,13 +177,14 @@ main .grid img:hover{
 
 footer{
     display: flex;
-    width: 100%;    
-    background-color: crimson;
+    width: 100%;  
+    color: rgb(0, 0, 0, 0.5);
+    background-color: antiquewhite;
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
-    /* min-height: 10%; */
     flex-basis: 5%;
+    padding-top: 0.7rem;
     
 }
 
@@ -186,10 +193,3 @@ footer a {
     color: rgb(0, 0, 0, 0.5);
     
 }
-
-/* @media (min-width: 375px) {
-    footer {
-        min-height: 5%;
-        background-color: brown;
-    }
-} */
