@@ -1,7 +1,8 @@
 import { cardArray } from "./cardArray.js";
 const gridDisplay = document.querySelector("#grid");
 const resultDisplay = document.querySelector("#result");
-const message = document.querySelector("#message")
+const message = document.querySelector("#message");
+const divMessage = document.querySelector("#div-message");
 let cards
 let cardsChosenNames = [];
 let cardsChosenIds = [];
@@ -36,17 +37,29 @@ const checkMatch = () => {
         cards[optionOneId].setAttribute('src', 'images/image-blank.jpg')
         cards[optionTwoId].setAttribute('src', 'images/image-blank.jpg')
         message.textContent = 'You have chosen the same image'
+        // yellow background
+        divMessage.style.backgroundColor = "rgb(245, 248, 90)"
+        setTimeout(()=>{
+            message.textContent = "Try again"
+            divMessage.style.backgroundColor = "white"
+        }, 1000)
     }
     
     // when user finds equal cards
     else if (cardsChosenNames[0] == cardsChosenNames[1]) {
         message.textContent = "That's a match!"
+        // green background
+        divMessage.style.backgroundColor = "rgb(125, 245, 125)"
         cards[optionOneId].removeEventListener('click', flipCard)
         cards[optionTwoId].removeEventListener('click', flipCard)
         cards[optionOneId].classList.add('dontFlip')
         cards[optionTwoId].classList.add('dontFlip')
         cardsWon.push(cardsChosenNames[0])
         cardsWon.push(cardsChosenNames[1])
+        setTimeout(()=>{
+            message.textContent = "Keep it up"
+            divMessage.style.backgroundColor = "white"
+        }, 1000)
     }
     
     // when user chooses wrong
@@ -54,6 +67,12 @@ const checkMatch = () => {
         cards[optionOneId].setAttribute('src', 'images/image-blank.jpg')
         cards[optionTwoId].setAttribute('src', 'images/image-blank.jpg')
         message.textContent = "not this time ..."
+        // red background
+        divMessage.style.backgroundColor = "rgb(238, 116, 116)"
+        setTimeout(()=>{
+            message.textContent = "Try again"
+            divMessage.style.backgroundColor = "white"
+        }, 1000)
     }
 
     resultDisplay.textContent = cardsWon.length / 2
@@ -69,7 +88,11 @@ const checkMatch = () => {
 
     // when user finishes the game
     if(cardsWon.length == cardArray.length){
-        message.textContent = "You found all pairs! :)"
+        setTimeout(()=>{
+            message.textContent = "Click here to play again"
+            divMessage.style.backgroundColor = "rgb(125, 245, 125)"
+        }, 1000)
+        divMessage.addEventListener("click", () => location.reload())
     }
 }
 
@@ -90,10 +113,3 @@ function flipCard() {
         setTimeout(checkMatch, 500)
     }    
 };
-
-
-
-
-
-
-

@@ -1,20 +1,20 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: rgb(53, 53, 53);
 }
 
 /* mobile first from 320px*/
 
-.game-container{
+.game-container {
     width: 100vw;
     max-width: 500px;
     min-width: 300px;
@@ -22,7 +22,7 @@ body{
     min-height: 538px;
     max-height: 827px;
     padding: 1rem;
-    background-color:antiquewhite;
+    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,16 +30,16 @@ body{
 }
 
 
-@media (min-width: 768px) {
-    .game-container{
+@media (min-width: 500px) {
+    .game-container {
         margin: 0.4rem 0;
-        height: 98vh;     
+        height: 98vh;
         border-radius: 0.5rem;
     }
 }
 
 
-header{
+header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,32 +55,16 @@ header .game-name {
     justify-content: center;
     font-family: 'Bebas Neue', cursive;
     color: rgb(34, 33, 33);
-    font-size: 1.8rem;    
+    font-size: 1.8rem;
     width: 100%;
-    flex-basis: 70%;    
+    flex-basis: 70%;
 }
 
-h1:hover{
+h1:hover {
     color: rgb(49, 49, 49);
 }
 
-@media (max-width: 400px) {
-    .game-name h1 .break-line{
-        display: block;
-        line-height: 1.5rem;
-        text-align: center;
-        
-    }
-}
-
-@media (min-width: 500px) {
-    .game-name h1 {
-        font-size: 5rem;
-    }
-}
-
-
-header .score{
+header .score {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,44 +74,67 @@ header .score{
     flex-basis: 30%;
 }
 
-.div-message{
-    background-color: pink;
+@media (max-width: 425px) {
+    .game-name {
+        font-size: 9rem;
+    }
+
+    .game-name h1 {
+        font-size: 3.9rem;
+    }
+
+    header {
+        flex-basis: 20%;
+    }
+
+    .game-container {
+        margin-top: -1rem;
+    }
+
+    .score {
+        margin-bottom: 0.8rem;
+    }
+
+    body {
+        background-color: antiquewhite;
+    }
 }
 
-.div-score-info{
-    background-color: yellow;
+@media (min-width: 425px) {
+    .game-name h1 {
+        font-size: 5rem;
+    }
 }
 
+.div-message {
+    background-color: white;
+}
 
+.div-score-info {
+    background-color: white;
+}
 
-
-.div-score-info, .div-message{
+.div-score-info,
+.div-message {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     min-height: 3rem;
-    border-radius: 0.3rem;    
+    border-radius: 0.3rem;
 }
 
-
-.score-info, .message{
+.score-info,
+.message {
     text-align: center;
 }
 
-header .score .score-info{
-   font-size: 0.7rem;
-   font-weight: bold;
-}
-
-main{
+main {
     display: flex;
     justify-content: center;
     width: 100%;
-    /* min-height: 55%; */
-    flex-basis: 60%;
+    flex-basis: 55%;
 }
-
 
 main .grid {
     display: grid;
@@ -135,49 +142,32 @@ main .grid {
     justify-content: center;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0.3rem;    
+    gap: 0.3rem;
     width: 100%;
 }
 
-main .grid .img-container{
+main .grid .img-container {
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0.3rem;
-    background-color: red;
 }
 
-main .grid .img-container img{
+main .grid .img-container img {
     display: block;
-    width: 100%;    
+    width: 100%;
     cursor: pointer;
     object-fit: cover;
     border-radius: 0.3rem;
 }
 
-
-@media (min-width: 385px) {
-    main .grid {
-        width: 90%;
-        gap: 0.5rem;
-    }
-}
-@media (min-width: 445px) {
-    main .grid {
-        width: 80%;
-        gap: 0.5rem;
-    }
-}
-
-
-main .grid img:hover{
+main .grid img:hover {
     background-color: rgba(255, 255, 255, .5);
 }
 
-
-footer{
+footer {
     display: flex;
-    width: 100%;  
+    width: 100%;
     color: rgb(0, 0, 0, 0.5);
     background-color: antiquewhite;
     align-items: center;
@@ -185,11 +175,32 @@ footer{
     font-size: 0.8rem;
     flex-basis: 5%;
     padding-top: 0.7rem;
-    
 }
 
 footer a {
     text-decoration: none;
     color: rgb(0, 0, 0, 0.5);
-    
+}
+
+@media (min-width: 385px) {
+    main .grid {
+        width: 90%;
+        gap: 0.5rem;
+    }
+
+    header .score {
+        width: 90%;
+    }
+}
+
+@media (min-width: 445px) {
+    main .grid {
+        width: 80%;
+        gap: 0.5rem;
+    }
+
+    header .score {
+        width: 80%;
+
+    }
 }
